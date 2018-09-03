@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'Weather Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../assets/font/weathericons-regular-webfont.woff');
-  }
-  body {
-    font-family: 'Weather Icons';
-  }

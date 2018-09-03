@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:700,900');
+@font-face {
+  font-family: 'Weather Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/font/weathericons-regular-webfont.woff');
+}
+html {
+  font-size: 14px;
+}
+body {
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  background-color: #f1f3f5;
+}
+html, body, #root, .wrapper {
+  height: 100%;
+}
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .App {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 0 80px;
+  }
+  .App-loading {
+    width: 40px;
+    height: 40px;
+    background-color: #28a47a;
+    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+  }
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}

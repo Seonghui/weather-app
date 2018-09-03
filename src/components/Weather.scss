@@ -1,0 +1,51 @@
+.large {
+  font-size: 2rem;
+}
+.weather {
+  width: 250px;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  margin: 0 5px;
+  box-shadow: 5px 10px #dbdbdb;
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .middle {
+    font-family: 'Weather Icons';
+    margin: 40px 0;
+    i {
+      font-size: 7rem;
+    }
+  }
+  .border {
+    border: 1px solid #fff;
+    margin: 10px 0;
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+  }
+}
+
+$color-array: ('#704fe4', '#2580d3', '#1ea579', '#76b62a', '#f56722');
+@for $i from 0 to length($color-array) {
+    .color-#{$i} {
+        background-color: unquote(nth($color-array, $i+1));
+        animation: fadein 1+$i#{s};
+    }
+}
+
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}

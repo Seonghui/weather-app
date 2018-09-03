@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import Weather from './components/Weather';
 
 class App extends Component {
@@ -20,17 +20,18 @@ class App extends Component {
     const weekNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const d = new Date();
     const month = monthNames[d.getMonth()];
-    let cnt = -1;
+    let idx = -1;
 
     const weathers = this.state.list.map((item, index) => {
       if(index % 8 === 0) {
-        cnt++;
+        idx++;
         
-        let date = d.getDate() + cnt;
-        let week = weekNames[d.getDay() + cnt];
+        let date = d.getDate() + idx;
+        let week = weekNames[d.getDay() + idx];
 
         return <Weather
-        key = { index }
+        key = { idx }
+        idx ={ idx }
         temp = { item.main.temp }
         weather = { item.weather[0].main }
         week = { week }
@@ -60,7 +61,7 @@ class App extends Component {
     const { isLoaded } = this.state;
     return (
       <div className = {isLoaded ? 'App' : 'App-loading'}>
-        {isLoaded ? this.renderWeathers() : 'Loading...'}
+        {isLoaded ? this.renderWeathers() : ''}
       </div>
     )
   }

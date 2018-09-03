@@ -1,10 +1,11 @@
 import React from 'react';
-import './Weather.css';
+import './Weather.scss';
 import '../assets/css/weather-icons.min.css'
 
-function Weather({temp, weather, week, date, month}) {
+function Weather({idx, temp, weather, week, date, month}) {
     
     let icon='';
+    let colorClass = 'weather color-' + idx;
 
     switch(weather) {
         case 'Thunderstorm': icon='wi wi-thunderstorm'; break;
@@ -18,18 +19,18 @@ function Weather({temp, weather, week, date, month}) {
     }
 
     return (
-        <div className="weather">
+        <div className={colorClass}>
             <div className="top">
-                {week}
-                {month}
-                {date}
+                <div className="large">{week}</div>
+                <div>{month} {date}</div>
             </div>
             <div className="middle">
                 <i className={icon}></i>
-                
             </div>
+            <div className="border"></div>
             <div className="bottom">
-                {parseInt(temp - 273.15, 10)} {weather}
+                <div>{parseInt(temp - 273.15, 10)}&deg;</div>
+                <div>{weather}</div>
             </div>
         </div>
     )

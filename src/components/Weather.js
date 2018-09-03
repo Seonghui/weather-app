@@ -2,7 +2,7 @@ import React from 'react';
 import './Weather.css';
 import '../assets/css/weather-icons.min.css'
 
-function Weather({maxTemp, minTemp, temp, weather, week, date, month}) {
+function Weather({temp, weather, week, date, month}) {
     
     let icon='';
 
@@ -26,10 +26,10 @@ function Weather({maxTemp, minTemp, temp, weather, week, date, month}) {
             </div>
             <div className="middle">
                 <i className={icon}></i>
-                {parseInt(temp - 273.15)}
+                
             </div>
             <div className="bottom">
-                {parseInt(minTemp - 273.15)} - {parseInt(maxTemp - 273.15)} 
+                {parseInt(temp - 273.15, 10)} {weather}
             </div>
         </div>
     )

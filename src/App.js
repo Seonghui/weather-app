@@ -31,8 +31,6 @@ class App extends Component {
 
         return <Weather
         key = { index }
-        maxTemp = { item.main.temp_max }
-        minTemp = { item.main.temp_min }
         temp = { item.main.temp }
         weather = { item.weather[0].main }
         week = { week }
